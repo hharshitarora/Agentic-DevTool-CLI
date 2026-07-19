@@ -1,33 +1,50 @@
-# Agentic DevTool CLI
+# 🛡️ Agentic DevTool CLI
+### The black box recorder for your AI agents.
 
-As a Founding Engineer, I created the Agentic DevTool CLI—a mission-critical tool for observability and secret management in agentic development workflows. This project emphasizes efficiency and security in the modern AI development lifecycle.
+Building AI agents is easy. Debugging them is hard. The **Agentic DevTool CLI** is a mission-critical utility for observability and secret management in agentic workflows. Built for developers who need to know exactly what their agents are doing—and keep their keys safe while doing it.
 
-## Technical Stack
+## 🚀 The Product Experience
+No more hunting through logs. The Agentic CLI provides a standardized bridge between your agent's execution and your observability stack, streaming traces and managing secrets with a single command.
 
-- **Frontier LLM Orchestration**: Integrated secret management and observability trace streaming.
-- **Backend**: Node.js CLI built with Commander.js.
-- **Observability**: Direct streaming to Honeycomb for performance analysis.
+### 📐 Logical Flow
+```text
+[ Agent Workflow ] ----(Secret Request)----> [ Agentic CLI Vault ]
+       |                                            |
+       +-------(Trace Stream)------> [ Honeycomb / Observability ]
+                                            |
+                                            v
+[ Developer ] <---(Real-time Debugging)-----+
+```
 
-## Impact
+## 🛠️ Technical Stack
+- **CLI Engine**: Built with **Node.js** and **Commander.js** for a robust developer experience.
+- **Security**: Integrated secure secret management for agent-specific credentials.
+- **Observability**: Direct telemetry streaming to **Honeycomb** for deep-dive performance analysis.
+- **Lifecycle Management**: Standardized hooks for agent initialization and trace capture.
 
-An essential side project for developers building AI agents, providing a standardized way to manage secrets and monitor agent behavior, leading to faster debugging and more secure deployments.
+## 📈 Engineering Impact
+- Dramatically accelerated the debugging cycle for complex agentic loops.
+- Standardized secret management, reducing the risk of credential leakage in dev environments.
+- High-performance trace streaming with minimal overhead on the host agent.
 
-## Infrastructure
+---
 
-The infrastructure for this project is managed using Terraform.
-See the [terraform/](./terraform/) directory for configuration details.
+## 🏗️ Infrastructure
+Managed via Infrastructure as Code (Terraform).
+See the [terraform/](./terraform/) directory for configuration.
 
-## Installation
-
+## 📥 Installation
 ```bash
 npm install
 npm run build
 npm link
 ```
 
-## Usage
-
+## 🎮 Usage
 ```bash
+# Initialize secure storage for your agent
 agentic-cli secret-init
+
+# Start streaming traces for real-time debugging
 agentic-cli trace-stream
 ```
